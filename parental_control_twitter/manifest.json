@@ -1,0 +1,31 @@
+{
+  "name": "Parental Control Tweet ",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Navigando il sito di Twitter, rende possibile l'offuscamento dei Tweet considerati inappropriati, quindi tossici.  ",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "debugger"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "matches": [
+        "https://*.twitter.com/*",
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
